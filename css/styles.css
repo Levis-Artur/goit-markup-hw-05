@@ -52,19 +52,7 @@ ul {
     list-style-type: none;
 }
 
-/* анімація hover/focus background-color, box-shadow*/
-.anime-bgc-bsh {
-    transition-duration: 250ms;
-    transition-property: background-color, box-shadow;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-/* анімація hover/focus color*/
-.anime-color {
-    transition-duration: 250ms;
-    transition-property: color;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 
 
 /* header */
@@ -88,8 +76,7 @@ header {
 
 .header-div {
     display: flex;
-    padding-top: 24px;
-    padding-bottom: 24px;
+    align-items: center;
 }
 
 
@@ -111,8 +98,12 @@ header {
 .menu-link {
     color: var(--primary-text-color);
     display: block;
+    padding: 24px 0;
     margin-right: 40px;
     position: relative;
+    transition-duration: 250ms;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -121,9 +112,13 @@ header {
     color: var(--hover-focus-color);
 }
 
+.current {
+    color: var(--hover-focus-color);
+}
+
 .menu-link.current::after {
     position: absolute;
-    bottom: -25px;
+    bottom: 0;
     content: '';
     display: block;
     width: 100%;
@@ -148,6 +143,9 @@ header {
     font-style: normal;
     color: var(--link-color);
     display: block;
+    transition-duration: 250ms;
+    transition-property: color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-link:hover,
@@ -205,6 +203,9 @@ header {
     border-radius: 4px;
     border: none;
     padding: 16px 32px;
+    transition-duration: 250ms;
+    transition-property: background, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover,
@@ -358,6 +359,9 @@ header {
     height: 40px;
     justify-content: center;
     align-items: center;
+    transition-duration: 250ms;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -383,6 +387,9 @@ header {
     border: 1px solid var(--filter-btn);
     border-radius: 4px;
     padding: 11px 23px;
+    transition-duration: 250ms;
+    transition-property: background, color, border-color, box-shadow;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
 }
 
@@ -413,6 +420,12 @@ header {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.18);
 }
 
+.port-img {
+    display: block;
+    min-width: 100%;
+    height: auto;
+}
+
 .img-list {
     display: flex;
     flex-wrap: wrap;
@@ -431,13 +444,11 @@ header {
 
 .portfolio-link:hover {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-
 }
 
-.port-wrapper {
-    display: block;
-    position: relative;
-    overflow: hidden;
+.portfolio-link:hover .overlay,
+.portfolio-link:focus .overlay{
+transform: translate(0, 0);
 }
 
 .overlay {
@@ -456,8 +467,11 @@ header {
     padding-left: 50px;
 }
 
-.img-list:hover .overlay {
-    transform: translate(0, 0);
+
+.port-wrapper {
+    display: block;
+    position: relative;
+    overflow: hidden;
 }
 
 .delineation {
@@ -499,6 +513,9 @@ header {
     width: 168px;
     height: 88px;
     color: #8E8F99;
+    transition-duration: 250ms;
+    transition-property: color, border-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover,
@@ -532,6 +549,9 @@ header {
     height: 40px;
     background-color: var(--logo-btn-color);
     border-radius: 50%;
+    transition-duration: 250ms;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-contacts-link:hover,
@@ -581,6 +601,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
     padding: 0;
     width: 24px;
     height: 24px;
